@@ -19,4 +19,5 @@
 ---
 
 > ### Intercalate
-> Intercalate inserts the method receiver slice into the function slice at each step.
+> Intercalate inserts the method receiver slice into the function slice 
+at each step and flattens the result.

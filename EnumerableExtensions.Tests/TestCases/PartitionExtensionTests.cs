@@ -1,22 +1,22 @@
 using FluentAssertions;
-using ListExtensions.Extensions;
+using EnumerableExtensions.Extensions;
 using NUnit.Framework;
 
-namespace ListExtensions.Tests.TestCases;
+namespace EnumerableExtensions.Tests.TestCases;
 
 [TestFixture]
 public class PartitionExtensionTests
 {
     [Test]
-    public void Partition_WithValidList_AndValidFunction_ReturnsMatchedAndUnMatched()
+    public void Partition_WithValidEnumerable_AndValidFunction_ReturnsMatchedAndUnMatched()
     {
         // ARRANGE
-        var list = Enumerable.Range(1, 10);
+        var enumerable = Enumerable.Range(1, 10);
         var expectedMatches = new List<int> { 2, 4, 6, 8, 10 };
         var expectedUnMatches = new List<int> { 1, 3, 5, 7, 9 };
 
         // ACT
-        var (matches, unMatches) = list.Partition(i => i % 2 == 0);
+        var (matches, unMatches) = enumerable.Partition(i => i % 2 == 0);
 
         // ASSERT
         matches.Should().BeEquivalentTo(expectedMatches);
@@ -24,13 +24,13 @@ public class PartitionExtensionTests
     }
 
     [Test]
-    public void Partition_WithEmptyList_AndValidFunction_ReturnsTwoEmptyLists()
+    public void Partition_WithEmptyEnumerable_AndValidFunction_ReturnsTwoEmptyLists()
     {
         // ACT
-        List<int> list = new();
+        List<int> enumerable = new();
 
         // ACT
-        var (matched, unMatched) = list.Partition(i => i % 2 == 0);
+        var (matched, unMatched) = enumerable.Partition(i => i % 2 == 0);
         
         // ASSERT
         matched.Should().BeOfType<List<int>>().And.BeEmpty();

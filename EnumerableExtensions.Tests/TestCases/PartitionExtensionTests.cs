@@ -16,11 +16,11 @@ public class PartitionExtensionTests
         var expectedUnMatches = new List<int> { 1, 3, 5, 7, 9 };
 
         // ACT
-        var (matches, unMatches) = enumerable.Partition(i => i % 2 == 0);
+        var (matched, unMatched) = enumerable.Partition(i => i % 2 == 0);
 
         // ASSERT
-        matches.Should().BeEquivalentTo(expectedMatches);
-        unMatches.Should().BeEquivalentTo(expectedUnMatches);
+        matched.Should().BeEquivalentTo(expectedMatches);
+        unMatched.Should().BeEquivalentTo(expectedUnMatches);
     }
 
     [Test]

@@ -25,4 +25,4 @@ at each step and flattens the result.
 ---
 
 > ### Transpose
-> Transpose transposes the rows and columns of the input
+> Transpose transposes the rows and columns of the input.

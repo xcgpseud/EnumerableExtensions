@@ -3,7 +3,7 @@ namespace EnumerableExtensions.Extensions;
 public static class IntercalateExtension
 {
     public static IEnumerable<T> Intercalate<T>(
-        this IEnumerable<T> insertEnumerable,
+        this IEnumerable<T> @this,
         IEnumerable<IEnumerable<T>> toFlatten
     )
     {
@@ -13,7 +13,7 @@ public static class IntercalateExtension
         {
             if (!first)
             {
-                foreach (var insertElement in insertEnumerable)
+                foreach (var insertElement in @this)
                 {
                     yield return insertElement;
                 }

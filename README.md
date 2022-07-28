@@ -25,4 +25,14 @@ at each step and flattens the result.
 ---
 
 > ### Transpose
-> Transpose transposes the rows and columns of the input
+> Transpose transposes the rows and columns of the input.
+
+---
+
+> ### Concat
+> Concat accepts a list of lists and concatenates them.
+
+---
+
+> ### ConcatMap
+> ConcatMap accepts a list of lists and concatenates them after executing the function on the elements.

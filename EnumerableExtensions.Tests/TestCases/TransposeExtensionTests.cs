@@ -13,16 +13,16 @@ public class TransposeExtensionTests
     {
         var enumerable = new List<List<int>>
         {
-            new List<int> { 1, 2, 3 },
-            new List<int> { 4, 5, 6 },
-            new List<int> { 7, 8, 9 },
+            new() { 1, 2, 3 },
+            new() { 4, 5, 6 },
+            new() { 7, 8, 9 },
         };
 
         var expectedResult = new List<List<int>>
         {
-            new List<int> { 1, 4, 7 },
-            new List<int> { 2, 5, 8 },
-            new List<int> { 3, 6, 9 },
+            new() { 1, 4, 7 },
+            new() { 2, 5, 8 },
+            new() { 3, 6, 9 },
         };
 
         var result = enumerable.Transpose();
@@ -35,16 +35,16 @@ public class TransposeExtensionTests
     {
         var enumerable = new List<List<int>>
         {
-            new List<int> { 1, 2, 3 },
-            new List<int> { 4 },
-            new List<int> { 7, 8 },
+            new() { 1, 2, 3 },
+            new() { 4 },
+            new() { 7, 8 },
         };
 
         var expectedResult = new List<List<int>>
         {
-            new List<int> { 1, 4, 7 },
-            new List<int> { 2, 8 },
-            new List<int> { 3 },
+            new() { 1, 4, 7 },
+            new() { 2, 8 },
+            new() { 3 },
         };
 
         var result = enumerable.Transpose();
